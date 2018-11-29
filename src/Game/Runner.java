@@ -1,6 +1,7 @@
 package Game;
 
 import People.Person;
+import Rooms.DeathRoom;
 import Rooms.Room;
 import Rooms.WinningRoom;
 
@@ -27,7 +28,10 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
+		int i = (int)(Math.random()*building.length-1);
+		int l = (int)(Math.random()*building.length-1);
 		building[x][y] = new WinningRoom(x, y);
+		building [i][l] = new DeathRoom(x,y);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
